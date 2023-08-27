@@ -1,5 +1,14 @@
-import '@/styles/globals.css'
+import {DataProvider} from '../context/DataProvider';
+import '../styles/globalStyles/normalize.scss';
+import '../styles/globalStyles/globals.scss';
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <DataProvider>
+      <Component {...pageProps} />
+    </DataProvider>
+  )
 }
+
+export default MyApp

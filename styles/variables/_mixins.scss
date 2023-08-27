@@ -1,0 +1,134 @@
+@import './variables';
+
+@mixin pageButton ($name, $buttom, $left1, $top, $left2) {
+  &:hover {
+    &::before {
+      content: $name;
+      position: absolute;
+      bottom: $buttom;
+      left: $left1;
+      font-weight: 400;
+      color: $secondary_color;
+      padding: 7px;
+      background-color: $primary_color;
+      border-radius: 10px;
+      z-index: 1;
+      box-shadow: 0 0 0.5rem 0.5rem $secondary_color;
+    }
+  }
+  @media (min-width: $breakpoint_tablet) {
+    &:hover {
+      transition: all 0.3s ease;
+      &::before {
+        content: $name;
+        position: absolute;
+        top: $top;
+        left: $left2;
+        font-weight: 400;
+        color: $secondary_color;
+        padding: 7px;
+        background-color: $primary_color;
+        border-radius: 10px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+@mixin perfil ($bgColor, $textColor) {
+  background-color: $bgColor;
+  height: 85vh;
+  font-size: 10px;
+
+  @media (min-width: 420px) {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (min-width: $breakpoint_tablet) {
+    width: 27%;
+    height: 110vh;
+    padding: .5rem;
+    position: absolute;
+    right: 2rem;
+    top: -7rem;
+    border-radius: 25px;
+  }
+
+  @media (min-width: $breakpoint_desktop) {
+    width: 25%;
+    height: 72vh;
+  }
+
+  .imagen {
+    background-image: url('../../public/img/foto1.jpg');
+    background-size: cover;
+    background-position: 50% 10%;
+    background-repeat: no-repeat;
+    width: 100%;
+    display: block;
+    height: 25rem;
+    margin: 2rem auto;
+
+    @media (min-width: 425px) {
+      height: 18rem;
+    }
+
+    @media (min-width: $breakpoint_tablet) {
+      width: 12rem;
+      height: 12rem;
+      margin: 0 auto;
+      border-radius: 50%;
+      position: absolute;
+      top: -6rem;
+    }
+  }
+
+  .card {
+    max-width: 90%;
+    margin: 3rem 2rem;
+    height: 15rem;
+    line-height: 2;
+
+    @media (min-width: $breakpoint_tablet) {
+      margin: 0;
+      position: absolute;
+      top: 8rem;
+      left: 3rem;
+      width: 70%;
+      padding: 0;
+    }
+
+    @media (min-width: 765px) {
+      width: 70%;
+      left: 2rem;
+    }
+
+    h3 {
+      margin: 0;
+      padding: 0;
+      font-size: 1rem;
+      color: $textColor;
+
+      @media (min-width: 865px) {
+        font-size: .8rem;
+        width: 30%;
+      }
+    }
+
+    p {
+      padding: 0;
+      width: 80%;
+      margin: 0 0 .5rem 0;
+      font-size: .8rem;
+      color: $textColor;
+
+      @media (min-width: 865px) {
+        font-size: .9rem;
+        width: 100%;
+      }
+    }
+  }
+}

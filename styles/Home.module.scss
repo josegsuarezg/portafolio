@@ -1,0 +1,144 @@
+@import 'variables/variables';
+@import 'variables/mixins';
+
+.header {
+  background-image: linear-gradient(to right, rgb(0 0 0 / .8), rgb(0 0 0 / .7)),
+  url('../public/img/hero1.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  @media (min-width: $breakpoint_tablet) {
+    height: 5rem;
+    padding: 5rem 0;
+    margin-top: 2rem;
+    margin-right: 1rem;
+
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    color: $text_wite;
+    text-align: left;
+    margin: 0;
+    padding-left: 2rem;
+    
+    @media (min-width: $breakpoint_tablet) {
+      font-size: 3rem;
+      font-weight: 700;
+      padding-left: 0;
+      padding-left: 2rem;
+    }
+  }
+  
+  p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: $text_wite;
+    text-align: left;
+    margin: 0;
+    padding-left: 2rem;
+    
+    @media (min-width: $breakpoint_tablet) {
+      font-size: 1rem;
+      padding-left: 0;
+      padding-left: 2rem;
+    }
+  }
+}
+
+.contenidoPrincipal {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  
+  @media (min-width: $breakpoint_tablet) {
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+  }
+  
+  .about {
+      margin: 0 auto;
+      width: 95%;
+      padding: 1rem;
+      line-height: 1.2; 
+    
+    @media (min-width: $breakpoint_tablet) {
+      width: 99%;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  
+  .botones {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+    @media (min-width: $breakpoint_mobile) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    @media (min-width: $breakpoint_tablet) {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+  
+  .button {
+    background-color: $primary_color;
+    color: $text_wite;
+    border: none;
+    padding: .8rem .8rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: .7rem;
+    font-weight: 700;
+    border-radius: 5px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    
+    &:hover {
+      background-color: darken($primary_color, 5);
+    }
+    
+    @media (min-width: 420px) {
+      display: inline-block;
+      width: 14rem;
+    }
+    
+    @media (min-width: 765px) {
+      width: 7rem;
+    }
+  }
+  
+  }
+  
+  .perfil {
+    @include perfil (#eff1f1, $text_dark);
+  }
+
+  .perfil__dark {
+    @include perfil ($primary_color, $text_wite);
+  }
+
+.dark {
+  background-color: $primary_color;
+}
+
+.ligth {
+  background-color: #fff;
+}
