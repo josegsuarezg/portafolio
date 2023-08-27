@@ -37,7 +37,7 @@ const data = [
     resumen: 'Creación de Portfolio de presentación y proyectos creados, así como también un área de contacto, para el cual se usaron herramientas como React, NextJS, Custom Hooks, API Context, Sass, Deploy en Vercel con CI/CD en GitHub .',
     imagen: '/img/proyectos/portfolio.png',
     enlace: 'https://suarezdev.vercel.app/',
-    repositorio: 'https://github.com/josegsuarezg/portfolio'
+    repositorio: 'https://github.com/josegsuarezg/portafolio'
   }
   
 ]
